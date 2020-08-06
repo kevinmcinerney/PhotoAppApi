@@ -74,6 +74,7 @@ public class UserServiceImpl implements UsersService {
 
     @Override
     public UserDto getUserByUserId(String userId) {
+
         UserEntity userEntity = usersRepository.findById(userId);
         if(userEntity == null) throw new UsernameNotFoundException("User not found");
 
