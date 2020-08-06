@@ -11,12 +11,14 @@
         <module name="PhotoAppApiUsers" />
         <module name="PhotoAppApiZuulGateway" />
         <module name="PhotoAppAPIConfigServer" />
+        <module name="PhotoAppApiAlbums" />
         <module name="PhotoAppApiAccountManagement" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="demo" target="1.8" />
       <module name="PhotoAppApiAccountManagement" target="1.8" />
+      <module name="PhotoAppApiAlbums" target="1.8" />
       <module name="PhotoAppAPIConfigServer" target="1.8" />
       <module name="PhotoAppApiUsers" target="1.8" />
       <module name="PhotoAppApiZuulGateway" target="1.8" />
@@ -27,6 +29,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="PhotoAppAPIConfigServer" options="-parameters" />
       <module name="PhotoAppApiAccountManagement" options="-parameters" />
+      <module name="PhotoAppApiAlbums" options="-parameters" />
       <module name="PhotoAppApiUsers" options="-parameters" />
       <module name="PhotoAppApiZuulGateway" options="-parameters" />
       <module name="PhotoAppDiscoveryService" options="-parameters" />
