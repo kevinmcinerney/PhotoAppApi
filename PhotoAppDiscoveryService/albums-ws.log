@@ -1,0 +1,40 @@
+2020-08-06 00:03:07.751  INFO 13581 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-08-06 00:08:07.759  INFO 13581 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-08-06 11:24:28.760  INFO 13581 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-08-06 11:29:28.761  INFO 13581 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-08-06 11:34:28.762  INFO 13581 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-08-06 11:39:28.763  INFO 13581 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-08-06 11:44:28.764  INFO 13581 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-08-06 11:49:28.766  INFO 13581 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-08-06 11:54:28.767  INFO 13581 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-08-06 11:59:28.768  INFO 13581 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-08-06 12:04:28.769  INFO 13581 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-08-06 12:09:28.770  INFO 13581 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-08-06 12:11:34.687  INFO 13581 --- [Thread-1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application USERS-WS with eureka with status DOWN
+2020-08-06 12:11:34.688  WARN 13581 --- [Thread-1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1596712294688, current=DOWN, previous=UP]
+2020-08-06 12:11:34.688  INFO 13581 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USERS-WS/users-ws:{spring.application.instance_id:id:4ab389f8ab84269021381135655f7fec}: registering service...
+2020-08-06 12:11:34.695  INFO 13581 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USERS-WS/users-ws:{spring.application.instance_id:id:4ab389f8ab84269021381135655f7fec} - registration status: 204
+2020-08-06 12:11:34.721  INFO 13581 --- [Thread-1] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2020-08-06 12:11:35.563  INFO 13581 --- [Thread-1] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2020-08-06 12:11:35.563  INFO 13581 --- [Thread-1] o.s.i.a.i.AmqpInboundChannelAdapter      : stopped inbound.springCloudBus.anonymous.Yu79pC1vQtaFD0J1hgHSaA
+2020-08-06 12:11:35.564  INFO 13581 --- [Thread-1] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.Yu79pC1vQtaFD0J1hgHSaA.errors' has 1 subscriber(s).
+2020-08-06 12:11:35.565  INFO 13581 --- [Thread-1] o.s.c.stream.binder.BinderErrorChannel   : Channel 'application-1.springCloudBus.anonymous.Yu79pC1vQtaFD0J1hgHSaA.errors' has 0 subscriber(s).
+2020-08-06 12:11:35.572  INFO 13581 --- [Thread-1] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-08-06 12:11:35.572  INFO 13581 --- [Thread-1] o.s.i.channel.PublishSubscribeChannel    : Channel 'application-1.errorChannel' has 0 subscriber(s).
+2020-08-06 12:11:35.572  INFO 13581 --- [Thread-1] o.s.i.endpoint.EventDrivenConsumer       : stopped _org.springframework.integration.errorLogger
+2020-08-06 12:11:35.577  INFO 13581 --- [Thread-1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-06 12:11:35.580  INFO 13581 --- [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-08-06 12:11:35.585  INFO 13581 --- [Thread-1] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-08-06 12:11:35.598  INFO 13581 --- [Thread-1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: springCloudBusInput
+2020-08-06 12:11:35.603  INFO 13581 --- [Thread-1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: springCloudBus.anonymous.Yu79pC1vQtaFD0J1hgHSaA.errors
+2020-08-06 12:11:35.603  INFO 13581 --- [Thread-1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: nullChannel
+2020-08-06 12:11:35.603  INFO 13581 --- [Thread-1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: errorChannel
+2020-08-06 12:11:35.603  INFO 13581 --- [Thread-1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: springCloudBusOutput
+2020-08-06 12:11:35.603  INFO 13581 --- [Thread-1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: _org.springframework.integration.errorLogger.handler
+2020-08-06 12:11:35.603  INFO 13581 --- [Thread-1] o.s.i.monitor.IntegrationMBeanExporter   : Summary on shutdown: org.springframework.cloud.stream.binding.StreamListenerMessageHandler@3217109b
+2020-08-06 12:11:35.604  INFO 13581 --- [Thread-1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2020-08-06 12:11:38.606  INFO 13581 --- [Thread-1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2020-08-06 12:11:38.617  INFO 13581 --- [Thread-1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USERS-WS/users-ws:{spring.application.instance_id:id:4ab389f8ab84269021381135655f7fec} - deregister  status: 200
+2020-08-06 12:11:38.640  INFO 13581 --- [Thread-1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2020-08-06 12:11:38.640  INFO 13581 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-08-06 12:11:38.642  INFO 13581 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
