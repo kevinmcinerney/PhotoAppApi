@@ -9,6 +9,15 @@ mysql -u kevin -p
 keytool -genkey -alias apiEncryptionKey -keyalg RSA -dname "CN=Kevin Mcinerney,OU=API Development,O=appsdeveloperblog.com,L=Ottawa,S=ON,C=CA" -keypass 1q2w3e4r -keystore apiEncryption.jks -storepass 1q2w3e4r
 
 
+kevin@Babage-Machine:~$ java -jar zipkin.jar
+
+
+kevin@Babage-Machine:/usr/share/logstash$ bin/logstash -f simple-config.conf 
+
+
+kevin@Babage-Machine:/usr/share/elasticsearch$ ./bin/elasticsearch
+
+
 
 
 
