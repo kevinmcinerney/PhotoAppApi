@@ -21,6 +21,8 @@ kevin@Babage-Machine:/usr/share/elasticsearch$ ./bin/elasticsearch
 http://localhost:9200/albums-ws-2020.08.10/_search?q=*&format&pretty
 http://localhost:9200/users-ws-2020.08.10/_search?q=*&format&pretty
 
+kevin@Babage-Machine:~/kibana-4.1.1-linux-x64$ bin/kibana
+
 
 
 
