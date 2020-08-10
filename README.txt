@@ -18,6 +18,10 @@ kevin@Babage-Machine:/usr/share/logstash$ bin/logstash -f simple-config.conf
 kevin@Babage-Machine:/usr/share/elasticsearch$ ./bin/elasticsearch
 
 
+http://localhost:9200/albums-ws-2020.08.10/_search?q=*&format&pretty
+http://localhost:9200/users-ws-2020.08.10/_search?q=*&format&pretty
+
+
 
 
 
