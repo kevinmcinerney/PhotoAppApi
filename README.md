@@ -14,7 +14,7 @@
   - ./mvnw package
   - docker build --tag=config-server --force-rm=true .
   - create dockerhub repository online with your account
-  - docker tag <CONTAINER_ID> <DOCKERHUB_NAME_OF_REPO>
+  - docker tag <IMAGE_ID> <DOCKERHUB_NAME_OF_REPO>
   - docker push <DOCKERHUB_NAME_OF_REPO>
   
 #### Run Docker Image for PhotoAppApiConfigServer
@@ -24,7 +24,7 @@
   - sudo yum install docker 
   - sudo service docker start
   - sudo usermod -a -G docker ec2-user
-  - docker run --env=spring.rabbitmq.host=172.17.0.2 -p 8012:8012 kevbot55/config-server  (use Docker inspect to get rabbitmq.host)
+  - docker run --env=spring.rabbitmq.host=172.17.0.3 -p 8012:8012 kevbot55/config-server  (use Docker inspect to get rabbitmq.host)
   
  ### Set inbound ports for PhotoAppApiConfigServer
  
@@ -39,31 +39,29 @@
  
  ## Eureka Server
 
-#### Build Docker Image for PhotoAppApiConfigServer
+#### Build Docker Image for Eureka Server
   - docker login --username=kevbot55
   - ./mvnw clean
   - ./mvnw package
   - docker build --tag=eureka-server --force-rm=true .
   - create dockerhub repository online with your account
-  - docker tag <CONTAINER_ID> <DOCKERHUB_NAME_OF_REPO>
+  - docker tag <IMAGE_ID_ID> <DOCKERHUB_NAME_OF_REPO>
   - docker push <DOCKERHUB_NAME_OF_REPO>
   
-#### Run Docker Image for PhotoAppApiConfigServer
+#### Run Docker Image for Eureka Server
   - ssh into aws instance
   - docker login --username=kevbot55
   - sudo yum update
   - sudo yum install docker 
   - sudo service docker start
   - sudo usermod -a -G docker ec2-user
-  - docker run -d -p 8010:8010 -e "spring.cloud.config.uri=http://34.254.0.23:8012" kevbot55/config-server  (try to get working with private)
-  or if config is all on remote server then
-  - docker run -d -p 8010:8010 kevbot55/config-server  (try to get working with private)
+  - docker run -d -p 8010:8010 kevbot55/config-server 
   
- ### Set inbound ports for PhotoAppApiConfigServer
+ ### Set inbound ports for Eureka Server
  
   ![GitHub Logo](/images/eureka-inbound.png)
  
- ### Check Euerka Dashboard
+ ### Check Dashboard for Eureka Server
    - <PUBLIC_IP_ADDRESS_OF_EUREKA_INSTANCE>:8010
     
     
