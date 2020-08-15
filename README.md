@@ -1,9 +1,15 @@
-# How to Deploy PhotoApp Project
+# How toDeploy PhotoApp Project
   
-## Building Docker Containers
+## PhotoAppApiConfigServer
 
+### Building Docker Containers
 
-### Build Docker Image for PhotoAppApiConfigServer
+#### Build RabbitMQ Docker Image for PhotoAppApiConfigServer
+
+  - docker run -d --name rabbit-name-management -p 15672:15672 -p 5672:5672 -p 15671:15671 -p 5671:5671 -p 4369:4369 rabbitmq:3-management
+  - Go to RabbitMQ dashboard and create users: <INSTANCE_PUBLIC_IP_ADDRESS>:15672
+
+#### Build Docker Image for PhotoAppApiConfigServer
   - docker login --username=kevbot55
   - ./mvnw clean
   - ./mvnw package
@@ -12,7 +18,7 @@
   - docker tag <CONTAINER_ID> <DOCKERHUB_NAME_OF_REPO>
   - docker push <DOCKERHUB_NAME_OF_REPO>
   
-### Run Docker Image for PhotoAppApiConfigServer
+#### Run Docker Image for PhotoAppApiConfigServer
   - ssh into aws instance
   - docker login --username=kevbot55
   - sudo yum update
@@ -21,10 +27,17 @@
   - sudo usermod -a -G docker ec2-user
   - docker run --env=spring.rabbitmq.host=172.17.0.2 -p 8012:8012 kevbot55/config-server  (use Docker inspect to get rabbitmq.host)
   
- ### Set inbound ports
+ ### Set inbound ports for PhotoAppApiConfigServer
  
  ![GitHub Logo](/images/config-inbound.png)
-  Format: ![Alt Text](url)
+ 
+ ### Test endpoints for PhotoAppApiConfigServer
+ 
+ - See PhotoApp.postman_collection.json
+ - getUserConfigDocker
+ - getAppConfigDocker
+ 
+ 
   
   
   
