@@ -55,9 +55,7 @@
   - sudo yum install docker 
   - sudo service docker start
   - sudo usermod -a -G docker ec2-user
-  - docker run -d -p 8010:8010 -e "spring.cloud.config.uri=http://172.31.32.241:8012" kevbot55/km-eureka-server
-  or if config is all on remote server then
-  - docker run -d -p 8010:8010 kevbot55/config-server  (try to get working with private)
+  - docker run -d -p 8010:8010 kevbot55/config-server 
   
  ### Set inbound ports for Eureka Server
  
