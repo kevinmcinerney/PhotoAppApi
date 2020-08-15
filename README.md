@@ -1,4 +1,4 @@
-# How toDeploy PhotoApp Project
+# PhotoApp Microservice Project
   
 ## PhotoAppApiConfigServer
 
@@ -38,11 +38,41 @@
  - getAppConfigDocker
  
  
+ ## Eureka Server
+
+### Building Docker Containers
+
+#### Build Docker Image for PhotoAppApiConfigServer
+  - docker login --username=kevbot55
+  - ./mvnw clean
+  - ./mvnw package
+  - docker build --tag=eureka-server --force-rm=true .
+  - create dockerhub repository online with your account
+  - docker tag <CONTAINER_ID> <DOCKERHUB_NAME_OF_REPO>
+  - docker push <DOCKERHUB_NAME_OF_REPO>
   
+#### Run Docker Image for PhotoAppApiConfigServer
+  - ssh into aws instance
+  - docker login --username=kevbot55
+  - sudo yum update
+  - sudo yum install docker 
+  - sudo service docker start
+  - sudo usermod -a -G docker ec2-user
+  - docker run -d -p 8010:8010 -e "spring.cloud.config.uri=http://34.254.0.23:8012" kevbot55/config-server  (try to get working with private)
+  or if config is all on remote server then
+  - docker run -d -p 8010:8010 kevbot55/config-server  (try to get working with private)
   
-  
-  
-  
+ ### Set inbound ports for PhotoAppApiConfigServer
+ 
+  ![GitHub Logo](/images/eureka-inbound.png)
+ 
+ ### Check Euerka Dashboard
+ 
+    - <PUBLIC_IP_ADDRESS_OF_EUREKA_INSTANCE>:8010
+    
+    
+ 
+
   
 sudo service rabbitmq-server start
 sudo service rabbitmq-server stop
