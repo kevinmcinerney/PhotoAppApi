@@ -30,4 +30,16 @@ kevin@Babage-Machine:~/kibana-4.1.1-linux-x64$ bin/kibana
 
 
 
+## Building Docker Containers
+
+docker login --username=kevbot55
+
+- PhotoAppApiConfigServer
+  - ./mvnw clean
+  - ./mvnw package
+  - docker build --tag=config-server --force-rm=true .
+  - create dockerhub repository online with your account
+  - docker tag <CONTAINER_ID> <DOCKERHUB_NAME_OF_REPO>
+  - docker push <DOCKERHUB_NAME_OF_REPO>
+
 
