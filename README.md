@@ -2,7 +2,6 @@
   
 ## PhotoAppApiConfigServer
 
-### Building Docker Containers
 
 #### Build RabbitMQ Docker Image for PhotoAppApiConfigServer
 
@@ -40,8 +39,6 @@
  
  ## Eureka Server
 
-### Building Docker Containers
-
 #### Build Docker Image for PhotoAppApiConfigServer
   - docker login --username=kevbot55
   - ./mvnw clean
@@ -67,8 +64,7 @@
   ![GitHub Logo](/images/eureka-inbound.png)
  
  ### Check Euerka Dashboard
- 
-    - <PUBLIC_IP_ADDRESS_OF_EUREKA_INSTANCE>:8010
+   - <PUBLIC_IP_ADDRESS_OF_EUREKA_INSTANCE>:8010
     
     
  
