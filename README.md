@@ -1,38 +1,35 @@
-Skip to content
- 
-Search or jump to…
+# How to Deploy PhotoApp Project
+  
+## Building Docker Containers
 
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@kevinmcinerney 
-Learn Git and GitHub without any code!
-Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
 
+### Build Docker Image for PhotoAppApiConfigServer
+  - docker login --username=kevbot55
+  - ./mvnw clean
+  - ./mvnw package
+  - docker build --tag=config-server --force-rm=true .
+  - create dockerhub repository online with your account
+  - docker tag <CONTAINER_ID> <DOCKERHUB_NAME_OF_REPO>
+  - docker push <DOCKERHUB_NAME_OF_REPO>
+  
+### Run Docker Image for PhotoAppApiConfigServer
+  - ssh into aws instance
+  - docker login --username=kevbot55
+  - sudo yum update
+  - sudo yum install docker 
+  - sudo service docker start
+  - sudo usermod -a -G docker ec2-user
+  - docker run --env=spring.rabbitmq.host=172.17.0.2 -p 8012:8012 kevbot55/config-server  (use Docker inspect to get rabbitmq.host)
+  
+ ### Set inbound ports
  
-kevinmcinerney
-/
-PhotoAppApi
-1
-0 0
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-PhotoAppApi/README.txt
- @kevinmcinerney
-kevinmcinerney Update README.txt
-Latest commit eed6867 1 minute ago
- History
- 1 contributor
-45 lines (23 sloc)  1.19 KB
+ ![GitHub Logo](/images/config-inbound.png)
+  Format: ![Alt Text](url)
+  
+  
+  
+  
+  
   
 sudo service rabbitmq-server start
 sudo service rabbitmq-server stop
@@ -66,17 +63,7 @@ kevin@Babage-Machine:~/kibana-4.1.1-linux-x64$ bin/kibana
 
 
 
-## Building Docker Containers
 
-docker login --username=kevbot55
-
-- PhotoAppApiConfigServer
-  - ./mvnw clean
-  - ./mvnw package
-  - docker build --tag=config-server --force-rm=true .
-  - create dockerhub repository online with your account
-  - docker tag <CONTAINER_ID> <DOCKERHUB_NAME_OF_REPO>
-  - docker push <DOCKERHUB_NAME_OF_REPO>
 
 
 © 2020 GitHub, Inc.
