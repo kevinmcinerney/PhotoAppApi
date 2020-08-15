@@ -25,5 +25,9 @@ kevin@Babage-Machine:~/kibana-4.1.1-linux-x64$ bin/kibana
 
 
 
+# To run in chosen environment (dev prod...)
+./mvnw spring-boot:run -Dspring-boot.run.arguments=--spring.profiles.active=production
+
+
 
 
