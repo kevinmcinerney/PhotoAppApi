@@ -29,7 +29,7 @@
   
  ### Set inbound ports for PhotoAppApiConfigServer
  
- ![GitHub Logo](/images/config-inbound.png)
+  ![GitHub Logo](/images/config-inbound.png)
  
  ### Test endpoints for PhotoAppApiConfigServer
  
