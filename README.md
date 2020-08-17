@@ -179,7 +179,7 @@
   - docker run -d --name=users-ws-logstash -v /home/ec2-user/api-logs:/api-logs kevbot55/km-users-microservice-logstash
 
 
-  ##Useful Commands
+  ## Useful Commands
   
   #### Elastic Search
   
