@@ -121,12 +121,46 @@
   ![GitHub Logo](/images/elastic-kibana-inbound.png)
   
 
+## Albums Microservice
 
+#### Build Docker Image for Albums Microservice
+  - docker login --username=kevbot55
+  - ./mvnw clean
+  - ./mvnw package
+  - docker build --tag=km-albums-microservice --force-rm=true .
+  - create dockerhub repository online with your account
+  - docker tag <IMAGE_ID> <DOCKERHUB_NAME_OF_REPO>
+  - docker push <DOCKERHUB_NAME_OF_REPO>
+  
+#### Run Docker Image for Albums Microservice + Logstash
+  - ssh into aws instance
+  - docker login --username=kevbot55
+  - sudo yum update
+  - sudo yum install docker 
+  - sudo service docker start
+  - sudo usermod -a -G docker ec2-user
+  - docker run -d -e "logging.file=/api-logs/albums-ws.log" -v /home/ec2-user/api-logs:/api-logs --network host kevbot55/km-albums-microservice
+  
+  
+## Users Microservice
 
-
-docker run -d -e "eureka.client.serviceUrl.defaultZone=http://test:test@172.31.41.218:8010/eureka" -e "logging.file=/api-logs/albums-ws.log" -v /home/ec2-user/api-logs:/api-logs --network host kevbot55/km-albums-microservice
-
-docker run -d -e "logging.file=/api-logs/albums-ws.log" -v /home/ec2-user/api-logs:/api-logs --network host kevbot55/km-albums-microservice
+#### Build Docker Image for Albums Microservice
+  - docker login --username=kevbot55
+  - ./mvnw clean
+  - ./mvnw package
+  - docker build --tag=km-users-microservice --force-rm=true .
+  - create dockerhub repository online with your account
+  - docker tag <IMAGE_ID> <DOCKERHUB_NAME_OF_REPO>
+  - docker push <DOCKERHUB_NAME_OF_REPO>
+  
+#### Run Docker Image for Albums Microservice + Logstash
+  - ssh into aws instance
+  - docker login --username=kevbot55
+  - sudo yum update
+  - sudo yum install docker 
+  - sudo service docker start
+  - sudo usermod -a -G docker ec2-user
+  - docker run -d -e "spring.cloud.config.uri=http://172.31.32.241:8012" -e "spring.rabbitmq.host=172.17.0.2" -e "eureka.client.serviceUrl.defaultZone=http://test:test@172.31.41.218:8010/eureka" -e "spring.datasource.url=jdbc:mysql://172.31.33.80:3306/photo_app?serverTimezone=UTC" --network host -e "logging.file=/api-logs/users-ws.log" -e "spring.profiles.active=development" -v /home/ec2-user/api-logs:/api-logs kevbot55/km-users-microservice
 
 
   
