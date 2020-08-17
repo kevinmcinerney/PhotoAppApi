@@ -26,26 +26,26 @@
   - sudo usermod -a -G docker ec2-user
   - docker run --env=spring.rabbitmq.host=172.17.0.3 -p 8012:8012 kevbot55/config-server  (use Docker inspect to get rabbitmq.host)
   
- ### Set inbound ports for PhotoAppApiConfigServer
+ #### Set inbound ports for PhotoAppApiConfigServer
  
   ![GitHub Logo](/images/config-inbound.png)
  
- ### Test endpoints for PhotoAppApiConfigServer
+ #### Test endpoints for PhotoAppApiConfigServer
  
  - See PhotoApp.postman_collection.json
  - getUserConfigDocker
  - getAppConfigDocker
  
  
- ## Eureka Server
+## Eureka Server
 
 #### Build Docker Image for Eureka Server
   - docker login --username=kevbot55
   - ./mvnw clean
   - ./mvnw package
-  - docker build --tag=eureka-server --force-rm=true .
+  - docker build --tag=km-eureka-server --force-rm=true .
   - create dockerhub repository online with your account
-  - docker tag <IMAGE_ID_ID> <DOCKERHUB_NAME_OF_REPO>
+  - docker tag <IMAGE_ID> <DOCKERHUB_NAME_OF_REPO>
   - docker push <DOCKERHUB_NAME_OF_REPO>
   
 #### Run Docker Image for Eureka Server
@@ -57,14 +57,46 @@
   - sudo usermod -a -G docker ec2-user
   - docker run -d -p 8010:8010 kevbot55/config-server 
   
- ### Set inbound ports for Eureka Server
+ #### Set inbound ports for Eureka Server
  
   ![GitHub Logo](/images/eureka-inbound.png)
  
- ### Check Dashboard for Eureka Server
+ #### Check Dashboard for Eureka Server
    - <PUBLIC_IP_ADDRESS_OF_EUREKA_INSTANCE>:8010
     
     
+## Zuul Server
+  
+#### Build Docker Image for Zuul Server
+  - docker login --username=kevbot55
+  - ./mvnw clean
+  - ./mvnw package
+  - docker build --tag=km-zuul_api-gateway --force-rm=true .
+  - create dockerhub repository online with your account
+  - docker tag <IMAGE_ID> <DOCKERHUB_NAME_OF_REPO>
+  - docker push <DOCKERHUB_NAME_OF_REPO>
+  
+#### Run Docker Image for Zuul Server
+  - ssh into aws instance
+  - docker login --username=kevbot55
+  - sudo yum update
+  - sudo yum install docker 
+  - sudo service docker start
+  - sudo usermod -a -G docker ec2-user
+  - docker run -d -p 8010:8010 kevbot55/km-zuul-api-gateway
+  
+ #### Set inbound ports for Zuul Server
+ 
+  ![GitHub Logo](/images/zuul-inbound.png)
+ 
+ #### Check Dashboard for Zuul Server
+   - <PUBLIC_IP_ADDRESS_OF_ZUUL_INSTANCE>:8010
+   
+   
+   
+   
+  
+  
  
 
   
