@@ -122,6 +122,13 @@
   
 
 
+
+
+docker run -d -e "eureka.client.serviceUrl.defaultZone=http://test:test@172.31.41.218:8010/eureka" -e "logging.file=/api-logs/albums-ws.log" -v /home/ec2-user/api-logs:/api-logs --network host kevbot55/km-albums-microservice
+
+docker run -d -e "logging.file=/api-logs/albums-ws.log" -v /home/ec2-user/api-logs:/api-logs --network host kevbot55/km-albums-microservice
+
+
   
 
   
