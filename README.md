@@ -93,6 +93,60 @@
    - <PUBLIC_IP_ADDRESS_OF_ZUUL_INSTANCE>:8010
    
    
+## MYSQL SERVER
+  - ssh into aws instance
+  - docker login --username=kevbot55
+  - sudo yum update
+  - sudo yum install docker 
+  - sudo service docker start
+  - sudo usermod -a -G docker ec2-user
+  - docker run -d -p 3306:3306 --name mysql-docker-container -e MYSQL_ROOT_PASSWORD=kevin -e MYSQL_DATABASE=photo_app -e MYSQL_USER=kevin -e MYSQL_PASSWORD=kevin                   -v /var/lib/mysql:/var/lib/mysql  mysql:5.7.31
+  
+   #### Set inbound ports for Zuul Server
+ 
+  ![GitHub Logo](/images/mysql-inbound.png)
+  
+  ## Kibabana + Elastic Search
+  - ssh into aws instance
+  - docker login --username=kevbot55
+  - sudo yum update
+  - sudo yum install docker 
+  - docker network create --driver bridge api-network
+  - docker run -d -v esdata1:/usr/share/elasticsearch/data --name elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" 
+                  --network api-network elasticsearch:7.3.0
+  - docker run -d --network api-network -p 5601:5601 kibana:7.3.0
+
+#### ELastic + Kibana inbound ports
+
+  ![GitHub Logo](/images/elastic-kibana-inbound.png)
+  
+
+
+
+
+docker run -d -e "eureka.client.serviceUrl.defaultZone=http://test:test@172.31.41.218:8010/eureka" -e "logging.file=/api-logs/albums-ws.log" -v /home/ec2-user/api-logs:/api-logs --network host kevbot55/km-albums-microservice
+
+docker run -d -e "logging.file=/api-logs/albums-ws.log" -v /home/ec2-user/api-logs:/api-logs --network host kevbot55/km-albums-microservice
+
+
+  
+
+  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
    
    
   
