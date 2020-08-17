@@ -141,7 +141,7 @@
   - sudo usermod -a -G docker ec2-user
   - docker run -d -e "logging.file=/api-logs/albums-ws.log" -v /home/ec2-user/api-logs:/api-logs --network host kevbot55/km-albums-microservice
   
- ## Logstash
+ #### Logstash
   - Create dockerfile, logstash.yml and logstash.conf. (See LogstashConfig folder of project)
   - docker build --tag=logstash --force-rm=true .
   - create dockerhub repository online with your account
@@ -170,7 +170,7 @@
   - sudo usermod -a -G docker ec2-user
   - docker run -d -e "spring.cloud.config.uri=http://172.31.32.241:8012" -e "spring.rabbitmq.host=172.17.0.2" -e "eureka.client.serviceUrl.defaultZone=http://test:test@172.31.41.218:8010/eureka" -e "spring.datasource.url=jdbc:mysql://172.31.33.80:3306/photo_app?serverTimezone=UTC" --network host -e "logging.file=/api-logs/users-ws.log" -e "spring.profiles.active=development" -v /home/ec2-user/api-logs:/api-logs kevbot55/km-users-microservice
  
- ## Logstash
+ #### Logstash
   - Create dockerfile, logstash.yml and logstash.conf. (See LogstashConfig folder of project)
   - docker build --tag=logstash --force-rm=true .
   - create dockerhub repository online with your account
@@ -179,42 +179,40 @@
   - docker run -d --name=users-ws-logstash -v /home/ec2-user/api-logs:/api-logs kevbot55/km-users-microservice-logstash
 
 
-  ## Useful Commands
+## Useful Commands
   
   #### Elastic Search
   
-  - http://ec2-54-217-54-156.eu-west-1.compute.amazonaws.com:9200/_cat/indices
-  - kevin@Babage-Machine:/usr/share/elasticsearch$ ./bin/elasticsearch
-  - http://localhost:9200/albums-ws-2020.08.10/_search?q=*&format&pretty
-  - http://localhost:9200/users-ws-2020.08.10/_search?q=*&format&pretty
+ - http://ec2-54-217-54-156.eu-west-1.compute.amazonaws.com:9200/_cat/indices
+ - kevin@Babage-Machine:/usr/share/elasticsearch$ ./bin/elasticsearch
+ - http://localhost:9200/albums-ws-2020.08.10/_search?q=*&format&pretty
+ - http://localhost:9200/users-ws-2020.08.10/_search?q=*&format&pretty
    
    
-   #### Logstash
+ #### Logstash
    
-   - kevin@Babage-Machine:/usr/share/logstash$ bin/logstash -f simple-config.conf 
+ - kevin@Babage-Machine:/usr/share/logstash$ bin/logstash -f simple-config.conf 
    
-   #### RabbitMQ
+ #### RabbitMQ
    
 - sudo service rabbitmq-server start
 - sudo service rabbitmq-server stop
 
-   #### MYSQL
+ #### MYSQL
    
 - sudo service mysql start
 - sudo service mysql stop
-
 - mysql -u kevin -p
 
-    #### Zipkin
+ #### Zipkin
     
 - kevin@Babage-Machine:~$ java -jar zipkin.jar
 
-
-    #### KeyGen
+ #### KeyGen
 
 - keytool -genkey -alias apiEncryptionKey -keyalg RSA -dname "CN=Kevin Mcinerney,OU=API Development,O=appsdeveloperblog.com,L=Ottawa,S=ON,C=CA" -keypass 1q2w3e4r            -keystore apiEncryption.jks -storepass 1q2w3e4r
 
-    #### Kibana
+ #### Kibana
     
 - kevin@Babage-Machine:~/kibana-4.1.1-linux-x64$ bin/kibana
 
