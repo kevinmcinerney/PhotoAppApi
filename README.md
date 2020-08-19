@@ -178,6 +178,13 @@
   - docker push <DOCKERHUB_NAME_OF_REPO>
   - docker run -d --name=users-ws-logstash -v /home/ec2-user/api-logs:/api-logs kevbot55/km-users-microservice-logstash
 
+#### Zipkin on Config Server
+
+  - docker run -d -p 9411:9411 --network host openzipkin/zipkin
+  - Add to <filename>,properties
+        spring.zipkin.base-url=http://172.31.32.241:9411
+        spring.zipkin.sender.type=web
+        spring.sleuth.sampler.probability=1
 
 ## Useful Commands
   
