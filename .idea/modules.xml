@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/PhotoAppApiAccountManagement/PhotoAppApiAccountManagement.iml" filepath="$PROJECT_DIR$/PhotoAppApiAccountManagement/PhotoAppApiAccountManagement.iml" />
       <module fileurl="file://$PROJECT_DIR$/PhotoAppApiAlbums/PhotoAppApiAlbums.iml" filepath="$PROJECT_DIR$/PhotoAppApiAlbums/PhotoAppApiAlbums.iml" />
       <module fileurl="file://$PROJECT_DIR$/PhotoAppApiUsers/PhotoAppApiUsers.iml" filepath="$PROJECT_DIR$/PhotoAppApiUsers/PhotoAppApiUsers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../PhotoAppApiZipkin/PhotoAppApiZipkin.iml" filepath="$PROJECT_DIR$/../PhotoAppApiZipkin/PhotoAppApiZipkin.iml" />
       <module fileurl="file://$PROJECT_DIR$/PhotoAppApiZuulGateway/PhotoAppApiZuulGateway.iml" filepath="$PROJECT_DIR$/PhotoAppApiZuulGateway/PhotoAppApiZuulGateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/PhotoAppDiscoveryService/PhotoAppDiscoveryService.iml" filepath="$PROJECT_DIR$/PhotoAppDiscoveryService/PhotoAppDiscoveryService.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />

@@ -10,6 +10,7 @@
         <module name="PhotoAppDiscoveryService" />
         <module name="PhotoAppApiUsers" />
         <module name="PhotoAppApiZuulGateway" />
+        <module name="PhotoAppApiZipkin" />
         <module name="PhotoAppAPIConfigServer" />
         <module name="PhotoAppApiAlbums" />
         <module name="PhotoAppApiAccountManagement" />
@@ -21,8 +22,10 @@
       <module name="PhotoAppApiAlbums" target="1.8" />
       <module name="PhotoAppAPIConfigServer" target="1.8" />
       <module name="PhotoAppApiUsers" target="1.8" />
+      <module name="PhotoAppApiZipkin" target="1.8" />
       <module name="PhotoAppApiZuulGateway" target="1.8" />
       <module name="PhotoAppDiscoveryService" target="1.8" />
+      <module name="zipkin-server" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -31,9 +34,11 @@
       <module name="PhotoAppApiAccountManagement" options="-parameters" />
       <module name="PhotoAppApiAlbums" options="-parameters" />
       <module name="PhotoAppApiUsers" options="-parameters" />
+      <module name="PhotoAppApiZipkin" options="-parameters" />
       <module name="PhotoAppApiZuulGateway" options="-parameters" />
       <module name="PhotoAppDiscoveryService" options="-parameters" />
       <module name="demo" options="-parameters" />
+      <module name="zipkin-server" options="-parameters" />
     </option>
   </component>
 </project>

@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/PhotoAppDiscoveryService/pom.xml" />
         <option value="$PROJECT_DIR$/PhotoAppApiAccountManagement/pom.xml" />
         <option value="$PROJECT_DIR$/PhotoAppApiAlbums/pom.xml" />
+        <option value="$PROJECT_DIR$/../PhotoAppApiZipkin/pom.xml" />
       </list>
     </option>
   </component>

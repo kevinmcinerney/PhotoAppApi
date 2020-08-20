@@ -11,6 +11,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.filter.CommonsRequestLoggingFilter;
 
 @SpringBootApplication
 @EnableDiscoveryClient
@@ -37,6 +38,17 @@ public class PhotoAppApiUsersApplication {
 	public Logger.Level feignLoggerLover(){
 		return Logger.Level.FULL;
 	}
+
+	@Bean
+	public CommonsRequestLoggingFilter requestLoggingFilter() {
+		CommonsRequestLoggingFilter loggingFilter = new CommonsRequestLoggingFilter();
+		loggingFilter.setIncludeClientInfo(true);
+		loggingFilter.setIncludeQueryString(true);
+		loggingFilter.setIncludePayload(true);
+		loggingFilter.setIncludeHeaders(false);
+		return loggingFilter;
+	}
+
 
 	// Not needed since FeignErrorDecoder class has @Component annotation
 //	@Bean
