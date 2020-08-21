@@ -41,11 +41,6 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     @Override
     public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res) throws AuthenticationException {
         try {
-//            String test;
-//            if ("POST".equalsIgnoreCase(req.getMethod()))
-//            {
-//                test = req.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
-//            }
             LoginRequestModel creds = new ObjectMapper()
                     .readValue(
                             req.getInputStream(),
