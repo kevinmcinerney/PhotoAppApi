@@ -23,6 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.stream.Collectors;
 
 public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
@@ -40,7 +41,15 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     @Override
     public Authentication attemptAuthentication(HttpServletRequest req, HttpServletResponse res) throws AuthenticationException {
         try {
-            LoginRequestModel creds = new ObjectMapper().readValue(req.getInputStream(), LoginRequestModel.class);
+//            String test;
+//            if ("POST".equalsIgnoreCase(req.getMethod()))
+//            {
+//                test = req.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
+//            }
+            LoginRequestModel creds = new ObjectMapper()
+                    .readValue(
+                            req.getInputStream(),
+                            LoginRequestModel.class);
 
             return getAuthenticationManager().authenticate(
                     new UsernamePasswordAuthenticationToken(

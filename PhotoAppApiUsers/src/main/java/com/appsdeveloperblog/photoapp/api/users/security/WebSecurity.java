@@ -5,6 +5,7 @@ import com.appsdeveloperblog.photoapp.api.users.service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -36,6 +37,18 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .addFilter(getAuthenticationFilter()); // use filter defined below with 1) attemptAuthentication and 2) successfulAuthentication
         http.headers().frameOptions().disable(); // so we can see h2 console
         http.formLogin().loginPage("/users/login");
+//        http.csrf().disable();
+//        http.authorizeRequests()
+//                .antMatchers("/**")// only access via this path pattern
+//                .hasIpAddress(env.getProperty("gateway.ip")) //only access api through zuul gateway
+////                .antMatchers(HttpMethod.POST,"/users")
+////                .hasIpAddress(env.getProperty("gateway.ip"))
+//                .antMatchers("/h2-console/**").permitAll()
+////                .anyRequest().authenticated() // any other non-matched request will need to authenticated
+//                .and()
+//                .addFilter(getAuthenticationFilter()); // use filter defined below with 1) attemptAuthentication and 2) successfulAuthentication
+//                //.addFilter(new AuthorizationFilter(authenticationManager(),env));
+//        http.headers().frameOptions().disable(); // so we can see h2 console
     }
 
     private AuthenticationFilter getAuthenticationFilter() throws Exception{
