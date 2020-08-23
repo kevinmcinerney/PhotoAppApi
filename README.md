@@ -227,4 +227,8 @@
 #### To run in chosen environment (dev prod...)
 ./mvnw spring-boot:run -Dspring-boot.run.arguments=--spring.profiles.active=production
 
+#### Docker
+- sudo yum install docker 
+- sudo service docker start
+- sudo usermod -a -G docker ec2-user
 
